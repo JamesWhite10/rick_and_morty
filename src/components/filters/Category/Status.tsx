@@ -28,7 +28,7 @@ const Status: React.FC<StatusPropsType> = ({ setStatus, setPageNumber }) => {
         aria-labelledby="headingThree"
         data-bs-parent="#accordionExample"
       >
-        <div className="accordion-body d-flex flex-wrap gap-3">
+        <div className="accordion-body d-flex justify-content-center flex-wrap gap-3">
           {status.map((items, index) => (
             <FilterBtn
               task={setStatus}

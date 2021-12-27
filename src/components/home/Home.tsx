@@ -2,9 +2,9 @@ import React, { useEffect, useState } from "react";
 import { CharacterCard, InfoType } from "../../types";
 import Search from "../search/Search";
 import { Col, Container, Row } from "react-bootstrap";
-import Filters from "../filters/Filters";
 import Cards from "../cards/Cards";
 import Pagination from "../pagination/Pagination";
+import Sidebar from "../sidebar/Sidebar";
 
 const Home: React.FC = () => {
   const [pageNumber, setPageNumber] = useState<number>(1);
@@ -43,15 +43,15 @@ const Home: React.FC = () => {
     <div className="App">
       <h1 className="text-center mb-4 berlin text-danger">&#10077; Characters &#10078;</h1>
       <Search setPageNumber={setPageNumber} setSearch={setSearch} />
+      <Sidebar
+        setSpecies={setSpecies}
+        setGender={setGender}
+        setStatus={setStatus}
+        setPageNumber={setPageNumber}
+      />
       <Container>
         <Row>
-          <Filters
-            setSpecies={setSpecies}
-            setGender={setGender}
-            setStatus={setStatus}
-            setPageNumber={setPageNumber}
-          />
-          <Col xl={9} lg={9} md={8} sm={8}>
+          <Col xl={12} lg={12} md={10} sm={10}>
             <Row>
               <Cards page="/" results={results} />
             </Row>

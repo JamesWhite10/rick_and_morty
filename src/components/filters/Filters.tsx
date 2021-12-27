@@ -1,8 +1,8 @@
 import React, { Dispatch, SetStateAction } from "react";
-import { Col } from "react-bootstrap";
 import Gender from "./Category/Gender";
 import Species from "./Category/Species";
 import Status from "./Category/Status";
+import { Button } from "react-bootstrap";
 
 type FilterPropsType = {
   setStatus: Dispatch<SetStateAction<string>>;
@@ -24,21 +24,35 @@ const Filters: React.FC<FilterPropsType> = ({
     setSpecies("");
   };
   return (
-    <Col xl={3} lg={3} md={4} sm={4}>
-      <div className="text-center fw-bold fs-4 mb-4">Filter</div>
-      <div
-        onClick={clear}
-        style={{ cursor: "pointer" }}
-        className="text-center text-danger text-underline mb-4"
+    <div>
+      <Button
+        className="btn btn-primary mt-2 mb-4"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#collapseExample"
+        aria-expanded="false"
+        aria-controls="collapseExample"
+        size="lg"
       >
-        Clear Filters
+        Filter
+      </Button>
+      <div className="collapse mb-4" id="collapseExample">
+        <div className="card card-body">
+          <div className="accordion" id="accordionExample">
+            <Status setStatus={setStatus} setPageNumber={setPageNumber} />
+            <Species setSpecies={setSpecies} setPageNumber={setPageNumber} />
+            <Gender setGender={setGender} setPageNumber={setPageNumber} />
+          </div>
+          <div
+            onClick={clear}
+            style={{ cursor: "pointer" }}
+            className="text-center text-danger text-underline mt-4 mb-4 border-danger"
+          >
+            Clear Filters
+          </div>
+        </div>
       </div>
-      <div className="accordion" id="accordionExample">
-        <Status setStatus={setStatus} setPageNumber={setPageNumber} />
-        <Species setSpecies={setSpecies} setPageNumber={setPageNumber} />
-        <Gender setGender={setGender} setPageNumber={setPageNumber} />
-      </div>
-    </Col>
+    </div>
   );
 };
 

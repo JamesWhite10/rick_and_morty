@@ -28,7 +28,7 @@ const Gender: React.FC<GenderPropsType> = ({ setGender, setPageNumber }) => {
         aria-labelledby="headingOne"
         data-bs-parent="#accordionExample"
       >
-        <div className="accordion-body d-flex flex-wrap gap-3">
+        <div className="accordion-body d-flex justify-content-center flex-wrap gap-3">
           {genders.map((items, index) => (
             <FilterBtn
               task={setGender}

@@ -9,26 +9,28 @@ type SearchPropsType = {
 
 const Search: React.FC<SearchPropsType> = ({ setSearch, setPageNumber }) => {
   return (
-    <form className="d-flex justify-content-center gap-4 mb-5">
-      <input
-        onChange={(e) => {
-          setPageNumber(1);
-          setSearch(e.target.value);
-        }}
-        placeholder="Search for Characters"
-        type="text"
-        className={style.input}
-      />
-      <Button
-        onClick={(event) => {
-          event.preventDefault();
-        }}
-        size="lg"
-        className={`${style.btn} btn btn-primary`}
-      >
-        Search
-      </Button>
-    </form>
+    <div>
+      <form className="d-flex justify-content-center gap-4 mb-4">
+        <input
+          onChange={(e) => {
+            setPageNumber(1);
+            setSearch(e.target.value);
+          }}
+          placeholder="Search for Characters..."
+          type="text"
+          className={style.input}
+        />
+        <Button
+          onClick={(event) => {
+            event.preventDefault();
+          }}
+          size="lg"
+          className={`${style.btn} btn btn-primary`}
+        >
+          Search
+        </Button>
+      </form>
+    </div>
   );
 };
 

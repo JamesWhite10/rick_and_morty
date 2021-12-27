@@ -40,7 +40,7 @@ const Species: React.FC<SpeciesPropsType> = ({ setSpecies, setPageNumber }) => {
         aria-labelledby="headingTwo"
         data-bs-parent="#accordionExample"
       >
-        <div className="accordion-body d-flex flex-wrap gap-3">
+        <div className="accordion-body d-flex justify-content-center flex-wrap gap-3">
           {species.map((items, index) => (
             <FilterBtn
               task={setSpecies}
